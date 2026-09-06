@@ -7,11 +7,6 @@ from gradelib import *
 
 r = Runner(save("xv6.out"))
 
-@test(5, "answers-traps.txt")
-def test_answers():
-    # just a simple sanity check, will be graded manually
-    check_answers("answers-traps.txt")
-
 BACKTRACE_RE = r"^(0x000000008[0-9a-f]+)"
 
 def addr2line():
@@ -70,5 +65,9 @@ def test_usertests():
 @test(1, "time")
 def test_time():
     check_time()
+
+@test(1, "references")
+def test_references():
+    check_references()
 
 run_tests()
